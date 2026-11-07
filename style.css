@@ -42,6 +42,31 @@ main {
 .hit-cta2 { left: 6.8%; width: 86.4%; top: 84.7%; height: 6.7%; }
 .hit:focus-visible { outline: 3px solid #D9A441; outline-offset: 2px; }
 
+/* 12枚目の丸い「Contact」も押せるようにする */
+.hit-contact { left: 71.3%; width: 20.5%; top: 47.1%; height: 11.7%; border-radius: 50%; }
+
+/* 3枚目のサービスのカード。押すと、そのサービスの説明へ移動する */
+.hit-course-4m { left: 7.4%; width: 41.4%; top: 34.2%; height: 17.8%; }
+.hit-course-monthly { left: 51.1%; width: 41.4%; top: 34.2%; height: 17.8%; }
+.hit-slides { left: 3.6%; width: 45.5%; top: 56.5%; height: 20.7%; }
+.hit-canva-course { left: 50.8%; width: 45.6%; top: 56.5%; height: 20.7%; }
+.hit-canva-site { left: 3.6%; width: 45.5%; top: 78.5%; height: 20.2%; }
+.hit-name-card { left: 50.8%; width: 45.6%; top: 78.5%; height: 20.2%; }
+/* 矢印は、カードが押せることを伝えるために置く */
+.hit-card::after {
+  content: "↓";
+  position: absolute;
+  right: 3%;
+  bottom: 4%;
+  color: var(--teal);
+  font-size: 14px;
+  line-height: 1;
+}
+
+html { scroll-behavior: smooth; }
+/* 移動した先で、ふわっと出る動きの分だけ見出しが上に切れないようにする */
+.part[id] { scroll-margin-top: 24px; }
+
 .note {
   padding: 24px 7% 32px;
   background: var(--paper);
@@ -61,13 +86,20 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  flex: 1 1 100%; /* 最後の申込みボタンと同じく、横いっぱいにする */
+  min-height: 52px;
   padding: 8px 20px;
   background: var(--teal);
   border: 1px solid var(--teal);
   color: #fff;
+  letter-spacing: .06em;
   text-decoration: none;
   transition: background .2s;
+}
+.btn::before {
+  content: "→";
+  order: 1;
+  margin-left: .8em;
 }
 .btn:hover { background: var(--ink); }
 .btn.ghost { background: transparent; color: var(--teal); }
@@ -179,6 +211,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
   .ripples { display: none; }
   .hit-fv::after, .hit-cta1::after, .btn::after { display: none; }
