@@ -134,27 +134,6 @@ main {
   100% { transform: translateX(520%); }
 }
 
-/* 動きを止めるボタン */
-.motion-toggle {
-  position: absolute;
-  right: 3%;
-  top: 86.5%;
-  z-index: 10;
-  min-height: 44px;
-  padding: 4px 8px;
-  background: rgba(255, 255, 255, .92);
-  border: 1px solid var(--teal);
-  color: var(--teal);
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
-}
-.motion-toggle:focus-visible { outline: 3px solid #D9A441; outline-offset: 2px; }
-
-.no-motion .ripples { display: none; }
-.no-motion .hit-fv::after, .no-motion .hit-cta1::after, .no-motion .btn::after { display: none; }
-.no-motion .part { opacity: 1 !important; transform: none !important; transition: none !important; }
-
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
   .ripples { display: none; }
