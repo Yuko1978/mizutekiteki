@@ -73,6 +73,49 @@ main {
 .btn.ghost { background: transparent; color: var(--teal); }
 .btn.ghost:hover { background: var(--mist); }
 
+/* お客様の声（原文のまま載せるので画像にせず文字で組む） */
+.voices {
+  padding: 56px 7% 64px;
+  background: var(--mist);
+}
+.voices-label {
+  margin: 0;
+  color: var(--teal);
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-size: 22px;
+  font-style: italic;
+  letter-spacing: .08em;
+}
+.voices h2 {
+  margin: 4px 0 28px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .04em;
+}
+.voice {
+  margin: 0 0 16px;
+  padding: 20px 22px 22px;
+  background: var(--paper);
+}
+.voice:last-child { margin-bottom: 0; }
+.voice figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #D9A441;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 500;
+}
+.voice figcaption span { flex-shrink: 0; font-weight: 400; }
+.voice blockquote {
+  margin: 0;
+  line-break: strict;
+}
+
 /* 動き1：スクロールでふわっと現れる */
 .can-reveal .part:not(.is-first) {
   opacity: 0;
