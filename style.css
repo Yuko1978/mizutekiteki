@@ -7,11 +7,23 @@
 
 * { box-sizing: border-box; }
 
+/* 数字（と数字の区切りのカンマ）だけを、英語見出しと同じ系統の斜体にする（2026-11-07 ゆうこさんの指定） */
+@font-face {
+  font-family: "LP Num";
+  src: url(https://fonts.gstatic.com/s/cormorantgaramond/v21/co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd5LDf-iNM8.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  size-adjust: 118%;
+  unicode-range: U+0030-0039, U+002C;
+}
+
 body {
   margin: 0;
   background: var(--mist);
   color: var(--ink);
-  font-family: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-family: "LP Num", "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-variant-numeric: lining-nums;
   font-size: 16px;
   line-height: 1.8;
 }
