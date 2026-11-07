@@ -115,6 +115,7 @@ main {
   margin: 0;
   line-break: strict;
 }
+.voice blockquote + blockquote { margin-top: 10px; }
 
 /* 動き1：スクロールでふわっと現れる */
 .can-reveal .part:not(.is-first) {
